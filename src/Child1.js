@@ -41,11 +41,10 @@ class Child1 extends Component {
 
   renderChart = () => {
     const data = this.filterData();
-    const margin = { top: 20, right: 80, bottom: 50, left: 50 }; // Adjusted margin for legend space
+    const margin = { top: 20, right: 80, bottom: 50, left: 50 }; 
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
-    // Clear previous chart
     d3.select("#chart").selectAll("*").remove();
 
     const svg = d3
@@ -56,7 +55,6 @@ class Child1 extends Component {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // Scales
     const x = d3
       .scaleTime()
       .domain(d3.extent(data, (d) => d.Date))
@@ -71,14 +69,12 @@ class Child1 extends Component {
       .nice()
       .range([height, 0]);
 
-    // Axes
     svg.append("g")
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x).ticks(6));
 
     svg.append("g").call(d3.axisLeft(y));
 
-    // Lines
     const line = d3
       .line()
       .x((d) => x(d.Date))
@@ -99,7 +95,6 @@ class Child1 extends Component {
       .attr("stroke-width", 2)
       .attr("d", line);
 
-    // Tooltip
     const tooltip = d3
       .select("#chart")
       .append("div")
@@ -109,7 +104,6 @@ class Child1 extends Component {
       .style("padding", "5px")
       .style("display", "none");
 
-    // Points
     svg.selectAll(".dot")
       .data(data)
       .enter()
@@ -154,12 +148,10 @@ class Child1 extends Component {
       })
       .on("mouseout", () => tooltip.style("display", "none"));
 
-    // Legend (move it to the right)
     const legend = svg
       .append("g")
       .attr("transform", `translate(${width + 20}, ${height / 2 - 180})`);
 
-    // Open Legend - Square
     legend
       .append("rect")
       .attr("width", 20)
@@ -174,7 +166,6 @@ class Child1 extends Component {
       .attr("y", 15)
       .text("Open");
 
-    // Close Legend - Square
     legend
       .append("rect")
       .attr("width", 20)
