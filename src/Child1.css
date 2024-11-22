@@ -1,0 +1,110 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Wrapper container for the whole component */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Chart area */
+  .chart-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Flexbox layout for the selectors */
+  .selectors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .radio-group input {
+    margin-right: 5px;
+  }
+  
+  .dropdown {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Tooltip styling */
+  .tooltip {
+    position: absolute;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 12px;
+    pointer-events: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  
+  /* Legend styling */
+  .legend {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .legend .color-box {
+    width: 20px;  /* Width for square */
+    height: 20px; /* Height for square */
+    margin-right: 5px;
+  }
+  
+  .legend .open {
+    background-color: #b2df8a;
+  }
+  
+  .legend .close {
+    background-color: #e41a1c;
+  }
+  
